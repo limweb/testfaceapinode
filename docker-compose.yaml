@@ -1,0 +1,16 @@
+version: "3.1"
+services:
+  faceapj:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: faceapj
+    working_dir: /app/
+    restart: "no"
+    ports:
+      - "8101:8101"
+    expose:
+      - "8101"
+    command: "/usr/local/bin/php /app/index.php"
+    labels:
+      com.docker.compose.project: "faceapj"
